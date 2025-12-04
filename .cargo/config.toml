@@ -29,8 +29,9 @@ target = "thumbv6m-none-eabi"
 rustflags = [
     "-C", "link-arg=--nmagic",
     "-C", "link-arg=-Tlink.x",
-    "-C", "inline-threshold=5",
+#   "-C", "inline-threshold=5",
     "-C", "no-vectorize-loops",
+    "-Cllvm-args=--inline-threshold=5",
 ]
 
 # This runner will make a UF2 file and then copy it to a mounted RP2040 in USB
